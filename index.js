@@ -159,10 +159,13 @@ setInterval(function () {
         memberG.style.color = 'rgb(150, 146, 146)';
         memberG.style.fontWeight = '100';
     }
+    else {
+        index = 0;
+    }
 
     index = index + 1;
     
-    if (index == 4) {
-        index = 0;
-    }
+    // if (index == 4) {
+    //     index = 0;
+    // }
 }, 4000);
