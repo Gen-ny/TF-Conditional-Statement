@@ -4,70 +4,87 @@
     box-sizing: border-box;
 }
 
-nav{
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
     background-color: rgb(39, 87, 87);
 }
 
-.team-name{
+.team-name {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 16px 0;
 }
 
-.team-name p{
+.team-name p {
     font-size: 30px;
     text-transform: uppercase;
     color: white;
     letter-spacing: 4px;
-
 }
 
-.names{
+.names {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 25px 50px;
+    flex-wrap: wrap; 
+    gap: 15px; 
 }
 
-.name{
+.name {
     color: rgb(150, 146, 146);
     letter-spacing: 3px;
     padding: 10px 20px;
     border-radius: 5px;
     border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.name:hover{
+
+.name.active {
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    border-color: white;
+}
+
+.name:hover:not(.active) {
     border-color: white;
     color: white;
     cursor: pointer;
 }
 
-
-.team-members{
+.team-members {
     display: flex;
     flex-direction: row;
     height: calc(100vh - 154px);
 }
 
-.image-container{
+.image-container {
     width: 50%;
     background-image: url(./images/genev.jpg);
     background-position: center;
     background-size: cover;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     height: 100%;
+    transition: background-image 0.5s ease; 
 }
 
-.info-container{
+.info-container {
     width: 50%;
     background-color: rgba(94, 94, 163, 0.301);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 20px;
 }
+
 .hi {
     font-size: 30px;
     margin-bottom: 20px;
@@ -81,12 +98,67 @@ nav{
     letter-spacing: 4px;
     font-weight: bold;
     color: rgb(9, 9, 43);
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 
+@media (max-width: 768px) {
+    .team-name p {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
 
+    .names {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 10px;
+    }
 
+    .name {
+        width: 100%; 
+        text-align: center;
+        padding: 12px 0;
+    }
 
+    
+    .team-members {
+        flex-direction: column;
+        height: auto; 
+        min-height: calc(100vh - 154px); 
+    }
 
+    .image-container, .info-container {
+        width: 100%;
+        height: 50vh;
+    }
 
+    .info-container {
+        height: auto;
+        padding: 40px 20px;
+    }
 
+    .hi {
+        font-size: 24px;
+    }
+
+    .info {
+        font-size: 36px; 
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-name p {
+        font-size: 20px;
+    }
+    
+    .hi {
+        font-size: 20px;
+    }
+
+    .info {
+        font-size: 28px;
+    }
+}
